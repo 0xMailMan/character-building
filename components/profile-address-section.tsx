@@ -163,12 +163,12 @@ export function ProfileAddressSection({
                     {copiedDev ? <Check className="size-3.5 text-primary" /> : <Copy className="size-3.5" />}
                   </Button>
                 </div>
-                <div className="mt-2 flex gap-2">
+                <div className="mt-2 flex flex-col gap-2 sm:flex-row">
                   <Button
                     type="button"
                     size="sm"
                     variant="outline"
-                    className="gap-1.5"
+                    className="gap-1.5 w-full sm:w-auto"
                     onClick={handleCopyDevAddress}
                   >
                     {copiedDev ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
@@ -178,7 +178,7 @@ export function ProfileAddressSection({
                     type="button"
                     size="sm"
                     variant="secondary"
-                    className="gap-1.5"
+                    className="gap-1.5 w-full sm:w-auto"
                     asChild
                   >
                     <a href="https://app.gnosis.io/" target="_blank" rel="noreferrer">
