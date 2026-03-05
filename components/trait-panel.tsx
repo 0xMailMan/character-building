@@ -1,6 +1,5 @@
 "use client"
 
-import { ScrollArea } from "@/components/ui/scroll-area"
 import { TraitGrid, SelectedTraitInfo } from "@/components/trait-grid"
 import {
   TRAIT_CATEGORIES,
@@ -38,15 +37,15 @@ export function TraitPanel({
       {/* Current selection info */}
       {selectedOption && <SelectedTraitInfo option={selectedOption} />}
 
-      {/* Trait grid */}
+      {/* Trait grid: horizontal scroll when narrow, vertical when many rows */}
       {category.options.length > 1 && (
-        <ScrollArea className="h-[320px] pr-2">
+        <div className="overflow-auto max-h-[320px] min-w-0">
           <TraitGrid
             options={category.options}
             selectedId={selectedTraitId || ""}
             onSelect={(id) => onTraitChange(activeCategory, id)}
           />
-        </ScrollArea>
+        </div>
       )}
     </div>
   )

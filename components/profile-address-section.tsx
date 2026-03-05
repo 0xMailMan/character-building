@@ -77,7 +77,7 @@ export function ProfileAddressSection({
       <p className="text-[11px] text-muted-foreground">
         Paste your Gnosis/Circles address to view or claim your inventory on this device.
       </p>
-      <div className="flex gap-2">
+      <div className="flex flex-col gap-2">
         <Input
           id="profile-address"
           placeholder={savedAddress ? `${savedAddress.slice(0, 10)}…${savedAddress.slice(-8)}` : "0x…"}
@@ -87,16 +87,16 @@ export function ProfileAddressSection({
           spellCheck={false}
         />
         {savedAddress ? (
-          <>
+          <div className="flex gap-2">
             <Button variant="outline" size="sm" onClick={handleSave} disabled={!address.trim()}>
               Update
             </Button>
             <Button variant="ghost" size="sm" onClick={handleClear} className="text-muted-foreground">
               <Trash2 className="size-4" />
             </Button>
-          </>
+          </div>
         ) : (
-          <Button size="sm" onClick={handleSave} disabled={!address.trim()}>
+          <Button size="sm" onClick={handleSave} disabled={!address.trim()} className="w-fit">
             {justSaved ? "Saved" : "Save"}
           </Button>
         )}

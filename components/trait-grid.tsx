@@ -22,7 +22,7 @@ function RarityDot({ rarity }: { rarity: Rarity }) {
 
 export function TraitGrid({ options, selectedId, onSelect }: TraitGridProps) {
   return (
-    <div className="grid grid-cols-3 gap-2">
+    <div className="grid grid-cols-3 gap-2 w-max min-w-full">
       {options.map((option) => (
         <button
           key={option.id}
